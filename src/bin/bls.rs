@@ -1,10 +1,8 @@
-mod bind;
-
 use std::error::Error;
 
-use bind::log::IscLog;
-use bind::mem::IscMem;
-use bind::parser::IscParser;
+use bind_parser::bind::log::IscLog;
+use bind_parser::bind::mem::IscMem;
+use bind_parser::bind::parser::IscParser;
 use lsp_server::{Connection, ExtractError, Message, Notification, Request, RequestId};
 use lsp_types::notification::DidSaveTextDocument;
 use lsp_types::notification::Notification as _;

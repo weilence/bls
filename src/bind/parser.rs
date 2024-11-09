@@ -6,7 +6,7 @@ use std::{
     ptr::{addr_of, null_mut},
 };
 
-use bind_parser::{
+use crate::{
     cfg_parse_buffer, cfg_parse_file, cfg_parser_create, cfg_parser_destroy, cfg_parser_reset,
     cfg_parser_t, cfg_type_namedconf, isc_result_ISC_R_SUCCESS,
 };
@@ -53,8 +53,7 @@ impl IscParser {
     pub fn parse_string(&self, str: &str) -> Result<Obj, Box<dyn Error>> {
         let mut conf = null_mut();
 
-        let mut isc_buffer = IscBuffer::new(str);
-        isc_buffer.add(str.len() as u32);
+        let isc_buffer = IscBuffer::from_str(str);
 
         let ret = unsafe {
             cfg_parser_reset(self.isc_parser);

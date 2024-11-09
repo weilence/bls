@@ -1,4 +1,4 @@
-use bind_parser::{
+use crate::{
     cfg_obj_destroy, cfg_obj_t, isc_result_ISC_R_SUCCESS, isccfg_check_namedconf,
     BIND_CHECK_ALGORITHMS, BIND_CHECK_PLUGINS,
 };

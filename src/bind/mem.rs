@@ -1,4 +1,4 @@
-use bind_parser::{isc__mem_create, isc__mem_destroy, isc_mem_t};
+use crate::{isc__mem_create, isc__mem_destroy, isc_mem_t};
 
 pub struct IscMem {
     isc_mem: *mut isc_mem_t,
